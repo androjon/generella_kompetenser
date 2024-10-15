@@ -56,9 +56,9 @@ for key in list(st.session_state.all_generic_skills_keys_definition.keys()):
         generic_skill_label = definition[0]
         number_of_selected += 1
         if (number_of_selected % 3) == 1:
-            col1.text_area(f"{key}  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
+            col1.text_area(f"**{key}**  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
         elif (number_of_selected % 3) == 2:
-            col2.text_area(f"{key}  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
+            col2.text_area(f"**{key}**  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
         else:
-            col3.text_area(f"{key}  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
-            
+            col3.text_area(f"**{key}**  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
+
