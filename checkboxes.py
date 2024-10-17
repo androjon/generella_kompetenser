@@ -24,12 +24,12 @@ for i in generic_data:
     st.write(f"**{i['name']}**  - {i['defintion']}")
     col1, col2 = st.columns(2)
     for g in i["generic_skills"]:
-        keyname = g['label'][0]
-        st.session_state.all_generic_skills_keys_definition[g['label'][0]] = [g['name'], g['definition']]
+        keyname = g['name']
+        st.session_state.all_generic_skills_keys_definition[g['name']] = [g['label'][0], g['definition']]
         if (number_of_generic_skills % 2) == 0:
-            col1.checkbox(f"{g['label'][0]}", help = f"{g['name']}  \n{g['definition']}", key = keyname)
+            col1.checkbox(f"**{g['label'][0]}** - {g['name']}", help = f"{g['definition']}", key = keyname)
         else:
-            col2.checkbox(f"{g['label'][0]}", help = f"{g['name']}  \n{g['definition']}", key = keyname)
+            col2.checkbox(f"**{g['label'][0]}** - {g['name']}", help = f"{g['definition']}", key = keyname)
         number_of_generic_skills += 1
     st.divider()
 
@@ -56,9 +56,9 @@ for key in list(st.session_state.all_generic_skills_keys_definition.keys()):
         generic_skill_label = definition[0]
         number_of_selected += 1
         if (number_of_selected % 3) == 1:
-            col1.text_area(f"**{key}**  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
+            col1.text_area(f"**{generic_skill_label}**  \n{key}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Ge exempel på situationer du varit det")
         elif (number_of_selected % 3) == 2:
-            col2.text_area(f"**{key}**  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
+            col2.text_area(f"**{generic_skill_label}**  \n{key}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Ge exempel på situationer du varit det")
         else:
-            col3.text_area(f"**{key}**  \n{generic_skill_label}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Här kan du skriva konkreta exempel")
+            col3.text_area(f"**{generic_skill_label}**  \n{key}", value = "", key = f"input_{key}", height = 400, help = definition[1], placeholder = "Ge exempel på situationer du varit det")
 
